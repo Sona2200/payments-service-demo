@@ -1,0 +1,13 @@
+name: deploy-staging-queued
+run-name: deploy-${{ inputs.request_id }}
+on:
+  workflow_dispatch:
+    inputs:
+      request_id:
+        required: true
+        type: string
+jobs:
+  deploy:
+    runs-on: [self-hosted, no-such-runner]
+    steps:
+      - run: echo "never starts"

@@ -1,0 +1,15 @@
+name: deploy-staging-success
+run-name: deploy-${{ inputs.request_id }}
+on:
+  workflow_dispatch:
+    inputs:
+      request_id:
+        required: true
+        type: string
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Deploying payments to staging..."
+      - run: sleep 8
+      - run: echo "Done"
